@@ -1,1 +1,0 @@
-export default function Page(){return <div className='container py-10'><h1 className='text-2xl font-semibold mb-4'>Privacy Policy</h1><p>Kebijakan privasi situs PII Cabang Pangkalpinang.</p></div>}

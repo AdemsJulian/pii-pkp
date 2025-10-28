@@ -1,1 +1,0 @@
-export default function Page(){return <div className='container py-10'><h1 className='text-2xl font-semibold mb-4'>Cookies Settings</h1><p>Pengaturan cookie.</p></div>}
