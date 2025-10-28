@@ -1,0 +1,1 @@
+export default function Page(){return <div className='container py-10'><h1 className='text-2xl font-semibold mb-4'>Terms of Service</h1><p>Ketentuan layanan situs PII Cabang Pangkalpinang.</p></div>}

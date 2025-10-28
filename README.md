@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PII Pangkalpinang – Next.js 14 (App Router)
 
-## Getting Started
+Situs resmi Persatuan Insinyur Indonesia Cabang Pangkalpinang yang meniru tata letak dan gaya UI situs PII pusat, namun seluruh konten sudah dipersonalisasi untuk Pangkalpinang/Bangka Belitung.
 
-First, run the development server:
+## Stack
+- Next.js 14 + App Router + TypeScript
+- Tailwind CSS (konfigurasi tema brand khusus)
+- keen-slider untuk seluruh carousel
+- Lucide Icons
+- Konten dummy dipisahkan di `src/data/site-content.ts` (siap disambungkan ke CMS)
 
+## Menjalankan Secara Lokal
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# buka http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build & Start Produksi
+```bash
+npm run build
+npm run start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Struktur Direktori
+```
+src/
+  app/                     # Entry App Router & styling global
+  components/
+    layout/                # Header & Footer
+    sections/              # Seksi halaman (hero, layanan, berita, dll)
+  data/                    # Sumber data dummy terstruktur
+  lib/                     # Utilitas kecil (cn)
+public/
+  logo-pii-black.png       # Logo resmi PII pusat
+  favicon.ico, og-image.png
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Mengganti Konten
+Seluruh komponen membaca data dari `src/data/site-content.ts`. File ini menyimpan:
+- `navItems`, `heroSlides`, `services`, `news`, `chairInsights`, `engineerInsights`
+- `membershipBenefits`, `agenda`, `partners`, `documents`, `footerContent`
+- `aboutContent`, `bannerHighlight`
 
-## Learn More
+Cukup ubah teks/tautan/gambar di file tersebut atau ganti dengan fetch dari CMS yang mengembalikan struktur objek yang sama.
 
-To learn more about Next.js, take a look at the following resources:
+## Aksesibilitas & UX
+- Heading dan landmark semantik terjaga.
+- Alt teks tersedia pada seluruh gambar.
+- Slider memiliki label dan kontrol keyboard.
+- Header lengket dan mengecil saat scroll.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO
+- Metadata, Open Graph, dan Twitter Card disetel di `src/app/layout.tsx`.
+- Base URL diarahkan ke `https://piipangkalpinang.or.id`.
+- Gambar hero & OG sudah disiapkan di `public/`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Catatan Teknis
+- `tailwind.config.ts` menambahkan warna brand, shadow, container, dan utilitas.
+- `next.config.mjs` memperbolehkan gambar dari Unsplash, dummyimage, is3.cloudhost.id, dan www.pii.or.id.
+- Keen Slider diinisialisasi per seksi (`hero-slider`, `insight-carousel`, `benefits-carousel`, `agenda-slider`).
+- Utilitas `cn` menggabungkan kelas Tailwind dengan `clsx` + `tailwind-merge`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deploy
+Proyek siap deploy ke platform hosting Node.js (mis. Vercel, Netlify, Render, VPS). Pastikan menjalankan perintah berikut:
+```bash
+npm run build
+npm run start
+```
+Server akan berjalan pada port `3000` secara default. Sesuaikan env jika dibutuhkan (mis. `PORT`, `NEXT_PUBLIC_*`).
