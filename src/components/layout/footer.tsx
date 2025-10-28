@@ -124,7 +124,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-brand-fog pt-6 text-sm text-brand-slate">
-          Hak Cipta 2025 Persatuan Insinyur Indonesia Cabang Pangkalpinang.
+          © Hak Cipta 2025 Persatuan Insinyur Indonesia Cabang Pangkalpinang.
           Seluruh hak cipta dilindungi undang-undang.
         </div>
       </div>
