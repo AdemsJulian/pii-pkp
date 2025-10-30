@@ -1,4 +1,4 @@
-ï»¿export type NavItem = {
+export type NavItem = {
   label: string;
   href: string;
   children?: {
@@ -109,7 +109,7 @@ export const aboutContent = {
     ],
   },
   board: {
-    title: "Struktur Pengurus Cabang PII Pangkalpinang 2024â€“2027",
+    title: "Struktur Pengurus Cabang PII Pangkalpinang 2024–2027",
     sections: [
       {
         heading: "Dewan Pembina",
@@ -460,7 +460,7 @@ export const membershipBenefits: BenefitSlide[] = [
 export const agenda: AgendaItem[] = [
   {
     id: "agenda-01",
-    title: "Pengukuhan Pengurus PII Pangkalpinang 2024â€“2027",
+    title: "Pengukuhan Pengurus PII Pangkalpinang 2024–2027",
     date: "Sabtu, 19 Oktober 2024",
     category: "Seremonial",
     mode: "Offline",
@@ -521,32 +521,32 @@ export const partners: PartnerItem[] = [
   },
   {
     name: "PT Jaya Konstruksi",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/c87a689e-831f-40a9-9ac3-9b5ff89e0dbe.png",
+    logo: "/partners/jaya-konstruksi.png",
     href: "https://www.jayakonstruksi.com/index.php",
   },
   {
     name: "Pelindo",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/59c7fce1-3737-4a72-8977-ac95ffe12623.png",
+    logo: "/partners/pelindo.png",
     href: "https://www.pelindo.co.id/",
   },
   {
     name: "Cirebon Power",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/74cb0dbd-d80a-4909-b0b2-79a10c31c2ee.png",
+    logo: "/partners/cirebon-power.png",
     href: "https://www.cirebonpower.co.id/id/",
   },
   {
     name: "Green Corridor Group",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/6ba4aa2d-a845-4463-a089-f8432129990b.jpg",
+    logo: "/partners/green-corridor.jpg",
     href: "https://www.pii.or.id/green%20corridor%20group",
   },
   {
     name: "Nginovasi",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/25fedfe8-8ec3-4084-847c-ce586394b4d7.png",
+    logo: "/partners/nginovasi.png",
     href: "https://nginovasi.com/",
   },
   {
     name: "PT DQC",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/ffb77171-5966-4038-bf1d-228f424d09b0.png",
+    logo: "/partners/pt-dqc.png",
     href: "https://www.ptdqc.com/",
   },
   {
