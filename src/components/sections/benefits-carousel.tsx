@@ -50,7 +50,7 @@ export function BenefitsCarousel() {
             </h2>
           </div>
           <Link
-            href="https://bit.ly/daftarpiipangkalpinang"
+            href="https://updmember.pii.or.id/auth/register"
             className="text-sm font-semibold text-brand-blue transition hover:text-brand-navy"
           >
             Gabung PII →

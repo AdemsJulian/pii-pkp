@@ -139,7 +139,7 @@ export function Header() {
             ))}
           </div>
           <Link
-            href="https://bit.ly/daftarpiipangkalpinang"
+            href="https://updmember.pii.or.id/auth/register"
             className="rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-white shadow-floating transition hover:-translate-y-0.5 hover:bg-brand-navy"
           >
             Gabung PII
@@ -259,7 +259,7 @@ export function Header() {
         </ul>
 
         <Link
-          href="https://bit.ly/daftarpiipangkalpinang"
+          href="https://updmember.pii.or.id/auth/register"
           className="mt-8 block rounded-2xl bg-brand-blue px-5 py-3 text-center text-sm font-semibold text-white shadow-floating"
         >
           Gabung PII Sekarang

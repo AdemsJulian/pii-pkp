@@ -251,7 +251,7 @@ export const services: ServiceItem[] = [
       "Prioritas undangan proyek Pemkot & BUMN tambang",
     ],
     ctaLabel: "Daftar Anggota",
-    href: "https://bit.ly/daftarpiipangkalpinang",
+    href: "https://updmember.pii.or.id/auth/register",
   },
   {
     title: "Program Profesi Insinyur",
@@ -429,7 +429,7 @@ export const membershipBenefits: BenefitSlide[] = [
       "Terhubung dengan praktisi pelabuhan, tambang timah, dan manufaktur perikanan lewat forum kurasi bulanan.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-    link: "https://bit.ly/daftarpiipangkalpinang",
+    link: "https://updmember.pii.or.id/auth/register",
   },
   {
     id: "benefit-02",
@@ -438,7 +438,7 @@ export const membershipBenefits: BenefitSlide[] = [
       "Keanggotaan aktif memperoleh akses hotline advokasi kontrak dan pendampingan sengketa teknis.",
     image:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80",
-    link: "https://bit.ly/daftarpiipangkalpinang",
+    link: "https://updmember.pii.or.id/auth/register",
   },
   {
     id: "benefit-03",
@@ -447,7 +447,7 @@ export const membershipBenefits: BenefitSlide[] = [
       "Berpartisipasi dalam laboratorium inovasi digital twin kota Pangkalpinang untuk transportasi dan air minum.",
     image:
       "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=900&q=80",
-    link: "https://bit.ly/daftarpiipangkalpinang",
+    link: "https://updmember.pii.or.id/auth/register",
   },
   {
     id: "benefit-04",
@@ -456,7 +456,7 @@ export const membershipBenefits: BenefitSlide[] = [
       "Rangkaian fellowship WFEO dan ASEAN Engineers kini menempatkan kuota khusus untuk anggota cabang.",
     image:
       "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=900&q=80",
-    link: "https://bit.ly/daftarpiipangkalpinang",
+    link: "https://updmember.pii.or.id/auth/register",
   },
   {
     id: "benefit-05",
@@ -465,7 +465,7 @@ export const membershipBenefits: BenefitSlide[] = [
       "Startup keteknikan lokal mendapat coaching bisnis, akses laboratorium pengujian, serta investor day tahunan.",
     image:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80",
-    link: "https://bit.ly/daftarpiipangkalpinang",
+    link: "https://updmember.pii.or.id/auth/register",
   },
 ];
 
