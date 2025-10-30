@@ -59,6 +59,7 @@ export type PartnerItem = {
   name: string;
   logo: string;
   href: string;
+  scaleClass?: string;
 };
 
 export const aboutContent = {
@@ -503,56 +504,67 @@ export const partners: PartnerItem[] = [
     name: "Karya Teknologi Abadi",
     logo: "/partners/kta.png",
     href: "https://karyateknologiabadi.com",
+    scaleClass: "scale-[1.2]",
   },
   {
     name: "Universitas Bangka Belitung",
     logo: "/partners/universitas-bangka-belitung.jpg",
     href: "https://ubb.ac.id",
+    scaleClass: "scale-[1.2]",
   },
   {
     name: "Tripatra",
     logo: "/partners/tripatra.png",
     href: "https://www.tripatra.com/id",
+    scaleClass: "scale-[1.35]",
   },
   {
     name: "PT Timah Tbk",
     logo: "/partners/pt-timah.png",
     href: "https://www.pttimah.co.id",
+    scaleClass: "scale-[1.15]",
   },
   {
     name: "PT Jaya Konstruksi",
     logo: "/partners/jaya-konstruksi.png",
     href: "https://www.jayakonstruksi.com/index.php",
+    scaleClass: "scale-[1.25]",
   },
   {
     name: "Pelindo",
     logo: "/partners/pelindo.png",
     href: "https://www.pelindo.co.id/",
+    scaleClass: "scale-[1.45]",
   },
   {
     name: "Cirebon Power",
     logo: "/partners/cirebon-power.png",
     href: "https://www.cirebonpower.co.id/id/",
+    scaleClass: "scale-[1.55]",
   },
   {
     name: "Green Corridor Group",
     logo: "/partners/green-corridor.jpg",
     href: "https://www.pii.or.id/green%20corridor%20group",
+    scaleClass: "scale-[1.45]",
   },
   {
     name: "Nginovasi",
     logo: "/partners/nginovasi.png",
     href: "https://nginovasi.com/",
+    scaleClass: "scale-[1.5]",
   },
   {
     name: "PT DQC",
     logo: "/partners/pt-dqc.png",
     href: "https://www.ptdqc.com/",
+    scaleClass: "scale-[1.45]",
   },
   {
     name: "Polman Babel",
     logo: "/partners/polman-babel.png",
     href: "https://polman-babel.ac.id",
+    scaleClass: "scale-[1.35]",
   },
 ];
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { partners } from "@/data/site-content";
+import { cn } from "@/lib/utils";
 
 export function PartnersGrid() {
   return (
@@ -42,7 +43,10 @@ export function PartnersGrid() {
                 width={240}
                 height={120}
                 sizes="(max-width: 1024px) 160px, 220px"
-                className="max-h-24 w-auto object-contain transition group-hover:scale-110"
+                className={cn(
+                  "max-h-24 w-auto transform object-contain transition duration-300 group-hover:scale-110",
+                  partner.scaleClass ?? ""
+                )}
               />
             </Link>
           ))}
