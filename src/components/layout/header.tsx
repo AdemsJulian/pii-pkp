@@ -83,11 +83,16 @@ export function Header() {
 
     try {
       const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-      if (storedLanguage === "EN" || storedLanguage === "ID") {
-        setSelectedLanguage(storedLanguage);
+
+      if (storedLanguage === "ID") {
+        setSelectedLanguage("ID");
+      } else {
+        setSelectedLanguage("ID");
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, "ID");
       }
     } catch {
-      // ignore storage issues
+      // ignore storage issues while defaulting to ID
+      setSelectedLanguage("ID");
     }
   }, []);
 
