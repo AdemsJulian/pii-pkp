@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navItems } from "@/data/site-content";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,23 @@ const languages = [
   { code: "ID", label: "Indonesia" },
   { code: "EN", label: "English" },
 ];
+
+const LANGUAGE_STORAGE_KEY = "pii:preferred-language";
+const ORIGINAL_URL_STORAGE_KEY = "pii:last-original-url";
+const DEFAULT_TRANSLATABLE_BASE_URL = "https://piipkp.netlify.app";
+const TRANSLATABLE_BASE_URL = (
+  process.env.NEXT_PUBLIC_TRANSLATABLE_BASE_URL ||
+  DEFAULT_TRANSLATABLE_BASE_URL
+).replace(/\/$/, "");
+
+const isLocalHostname = (hostname: string) =>
+  hostname === "localhost" ||
+  hostname === "127.0.0.1" ||
+  hostname === "[::1]" ||
+  hostname.endsWith(".local") ||
+  /^192\.168\./.test(hostname) ||
+  /^10\./.test(hostname) ||
+  /^172\.(1[6-9]|2\d|3[0-1])\./.test(hostname);
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +50,106 @@ export function Header() {
       document.body.style.overflow = "";
     }
   }, [mobileOpen]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const currentUrl = new URL(window.location.href);
+    const hostname = currentUrl.hostname;
+    const isTranslatedHost =
+      hostname.includes("translate.goog") ||
+      hostname.includes("translate.googleusercontent.com");
+
+    if (isTranslatedHost) {
+      setSelectedLanguage("EN");
+
+      try {
+        const originalUrl = currentUrl.searchParams.get("u");
+        const returnUrl =
+          currentUrl.searchParams.get("original") ??
+          (originalUrl ? decodeURIComponent(originalUrl) : null);
+
+        if (returnUrl) {
+          sessionStorage.setItem(ORIGINAL_URL_STORAGE_KEY, returnUrl);
+        }
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, "EN");
+      } catch {
+        // no-op when storage is unavailable
+      }
+      return;
+    }
+
+    try {
+      const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+      if (storedLanguage === "EN" || storedLanguage === "ID") {
+        setSelectedLanguage(storedLanguage);
+      }
+    } catch {
+      // ignore storage issues
+    }
+  }, []);
+
+  const handleLanguageChange = useCallback(
+    (langCode: string) => {
+      if (langCode === selectedLanguage) {
+        return;
+      }
+
+      setSelectedLanguage(langCode);
+
+      if (typeof window === "undefined") {
+        return;
+      }
+
+      try {
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
+      } catch {
+        // ignore storage issues
+      }
+
+      if (langCode === "EN") {
+        const currentUrl = new URL(window.location.href);
+        const targetUrl = isLocalHostname(currentUrl.hostname)
+          ? `${TRANSLATABLE_BASE_URL}${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`
+          : currentUrl.href;
+
+        const translatorUrl = new URL("https://translate.google.com/translate");
+        translatorUrl.searchParams.set("sl", "id");
+        translatorUrl.searchParams.set("tl", "en");
+        translatorUrl.searchParams.set("u", targetUrl);
+        translatorUrl.searchParams.set("original", currentUrl.href);
+
+        window.location.href = translatorUrl.toString();
+        return;
+      }
+
+      let targetUrl: string | null = null;
+
+      try {
+        targetUrl = sessionStorage.getItem(ORIGINAL_URL_STORAGE_KEY);
+        if (!targetUrl) {
+          const currentUrl = new URL(window.location.href);
+          targetUrl =
+            currentUrl.searchParams.get("original") ??
+            currentUrl.searchParams.get("u");
+        }
+      } catch {
+        targetUrl = null;
+      }
+
+      if (targetUrl) {
+        try {
+          sessionStorage.removeItem(ORIGINAL_URL_STORAGE_KEY);
+        } catch {
+          // ignore removal issues
+        }
+        window.location.href = decodeURIComponent(targetUrl);
+      }
+    },
+    [selectedLanguage]
+  );
 
   return (
     <header
@@ -137,7 +254,7 @@ export function Header() {
                     ? "bg-brand-blue text-white shadow-sm"
                     : "text-brand-slate hover:text-brand-navy"
                 )}
-                onClick={() => setSelectedLanguage(lang.code)}
+                onClick={() => handleLanguageChange(lang.code)}
               >
                 {lang.code}
               </button>
@@ -204,7 +321,7 @@ export function Header() {
                   ? "bg-white text-brand-navy shadow"
                   : "text-brand-slate"
               )}
-              onClick={() => setSelectedLanguage(lang.code)}
+              onClick={() => handleLanguageChange(lang.code)}
             >
               {lang.label}
             </button>
