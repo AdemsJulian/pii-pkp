@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { partners } from "@/data/site-content";
-import { cn } from "@/lib/utils";
 
 export function PartnersGrid() {
   return (
@@ -40,13 +39,14 @@ export function PartnersGrid() {
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                width={240}
-                height={120}
-                sizes="(max-width: 1024px) 160px, 220px"
-                className={cn(
-                  "max-h-24 w-auto transform object-contain transition duration-300 group-hover:scale-110",
-                  partner.scaleClass ?? ""
-                )}
+                width={320}
+                height={160}
+                sizes="(max-width: 1024px) 200px, 280px"
+                className="max-h-28 w-auto object-contain"
+                style={{
+                  transform: `scale(${partner.scale ?? 1})`,
+                  transformOrigin: "center",
+                }}
               />
             </Link>
           ))}
