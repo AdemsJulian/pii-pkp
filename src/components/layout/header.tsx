@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -94,7 +94,7 @@ export function Header() {
                 {hasChildren && (
                   <div
                     className={cn(
-                      "pointer-events-none absolute left-1/2 top-10 w-max -translate-x-1/2 rounded-2xl border border-black/5 bg-white/95 p-4 shadow-xl transition-all duration-200",
+                      "pointer-events-none absolute left-1/2 top-full w-max -translate-x-1/2 rounded-2xl border border-black/5 bg-white/95 p-4 shadow-xl transition-all duration-200",
                       activeDropdown === item.label
                         ? "pointer-events-auto opacity-100"
                         : "opacity-0"
