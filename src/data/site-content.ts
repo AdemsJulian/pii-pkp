@@ -1,4 +1,4 @@
-export type NavItem = {
+ï»¿export type NavItem = {
   label: string;
   href: string;
   children?: {
@@ -109,7 +109,7 @@ export const aboutContent = {
     ],
   },
   board: {
-    title: "Struktur Pengurus Cabang PII Pangkalpinang 2024–2027",
+    title: "Struktur Pengurus Cabang PII Pangkalpinang 2024â€“2027",
     sections: [
       {
         heading: "Dewan Pembina",
@@ -460,7 +460,7 @@ export const membershipBenefits: BenefitSlide[] = [
 export const agenda: AgendaItem[] = [
   {
     id: "agenda-01",
-    title: "Pengukuhan Pengurus PII Pangkalpinang 2024–2027",
+    title: "Pengukuhan Pengurus PII Pangkalpinang 2024â€“2027",
     date: "Sabtu, 19 Oktober 2024",
     category: "Seremonial",
     mode: "Offline",
@@ -600,6 +600,7 @@ export const documents = [
     href: "#",
   },
 ];
+
 
 
 

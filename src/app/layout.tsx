@@ -51,7 +51,12 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/logo-pii-black.png", type: "image/png", sizes: "196x196" }
+    ],
+    apple: "/logo-pii-black.png",
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -72,4 +77,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
