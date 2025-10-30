@@ -511,12 +511,12 @@ export const partners: PartnerItem[] = [
   },
   {
     name: "Tripatra",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/06beb302-a561-4c7f-a90d-fecfe18c2712.png",
+    logo: "/partners/tripatra.png",
     href: "https://www.tripatra.com/id",
   },
   {
     name: "PT Timah Tbk",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/f4c32222-1e54-4114-8c50-55f5a550240c.png",
+    logo: "/partners/pt-timah.png",
     href: "https://www.pttimah.co.id",
   },
   {
