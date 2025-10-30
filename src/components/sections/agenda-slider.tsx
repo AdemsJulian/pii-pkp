@@ -36,10 +36,10 @@ export function AgendaSlider() {
       className="section-spacing bg-white"
       aria-labelledby="agenda-heading"
     >
-      <div className="container">
-        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="container space-y-10">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-blue/80">
               Agenda PII
             </p>
             <h2
@@ -49,12 +49,17 @@ export function AgendaSlider() {
               Kegiatan resmi PII Pangkalpinang semester ini
             </h2>
           </div>
-          <Link
-            href="#"
-            className="text-sm font-semibold text-brand-blue transition hover:text-brand-navy"
-          >
-            Agenda PII Lainnya →
-          </Link>
+          <div className="flex flex-col items-start gap-2 text-sm text-brand-slate">
+            <span>
+              Agenda lengkap dan update harian kami bagikan melalui Instagram cabang.
+            </span>
+            <Link
+              href="https://www.instagram.com/pii_pangkalpinang/"
+              className="inline-flex items-center text-sm font-semibold text-brand-blue transition hover:text-brand-midnight"
+            >
+              Buka Instagram PII Pangkalpinang ?
+            </Link>
+          </div>
         </div>
 
         <div ref={sliderRef} className="keen-slider">
@@ -86,9 +91,9 @@ export function AgendaSlider() {
                 </p>
                 <Link
                   href={item.link}
-                  className="mt-auto text-sm font-semibold text-brand-blue transition hover:text-brand-navy"
+                  className="mt-auto inline-flex items-center text-sm font-semibold text-brand-blue transition hover:text-brand-midnight"
                 >
-                  Detail Agenda →
+                  Detail agenda di Instagram ?
                 </Link>
               </div>
             </article>

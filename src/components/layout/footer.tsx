@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { footerContent } from "@/data/site-content";
 
+const phonePlain = footerContent.phone.replace(/[^+\d]/g, "");
+
 
 const socialIcons = {
   Facebook,
@@ -131,6 +133,12 @@ export function Footer() {
     </footer>
   );
 }
+
+
+
+
+
+
 
 
 

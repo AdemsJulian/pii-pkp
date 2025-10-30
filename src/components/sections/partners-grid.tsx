@@ -6,26 +6,25 @@ export function PartnersGrid() {
   return (
     <section
       id="mitra"
-      className="section-spacing bg-brand-fog"
+      className="section-spacing bg-brand-fog/70"
       aria-labelledby="mitra-heading"
     >
-      <div className="container">
-        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div className="container space-y-10">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">
-              Mitra PII
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-blue/80">
+              Jaringan Mitra
             </p>
             <h2
               id="mitra-heading"
               className="mt-3 text-3xl font-semibold text-brand-midnight sm:text-4xl"
             >
-              Kolaborasi lintas sektor untuk membangun Bangka Belitung
+              Kolaborasi lintas sektor untuk mempercepat pembangunan Bangka Belitung
             </h2>
           </div>
           <p className="max-w-xl text-sm text-brand-slate">
-            Kami bermitra dengan pemerintah, BUMN, kampus, serta industri untuk
-            mewujudkan proyek keteknikan berstandar global sekaligus
-            memberdayakan talenta lokal.
+            Sinergi dengan pemerintah daerah, perguruan tinggi, BUMN, dan industri strategis
+            memastikan setiap program berjalan berdampak dan berkelanjutan.
           </p>
         </div>
 
@@ -34,15 +33,16 @@ export function PartnersGrid() {
             <Link
               key={partner.name}
               href={partner.href}
-              className="card flex h-32 items-center justify-center p-6 transition hover:-translate-y-1 hover:shadow-floating"
+              className="group relative flex h-36 items-center justify-center rounded-[28px] border border-brand-fog bg-white shadow-card transition hover:-translate-y-1 hover:shadow-floating"
               aria-label={partner.name}
             >
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                width={180}
-                height={88}
-                className="h-16 w-auto object-contain"
+                width={240}
+                height={120}
+                sizes="(max-width: 1024px) 160px, 220px"
+                className="max-h-24 w-auto object-contain transition group-hover:scale-110"
               />
             </Link>
           ))}

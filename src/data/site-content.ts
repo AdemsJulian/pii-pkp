@@ -1,4 +1,4 @@
-export type NavItem = {
+﻿export type NavItem = {
   label: string;
   href: string;
   children?: {
@@ -63,10 +63,39 @@ export type PartnerItem = {
 
 export const aboutContent = {
   history: {
-    title: "Sejarah Singkat",
-    text: [
-      "PII Cabang Pangkalpinang berdiri sejak 1974 sebagai wadah organisasi insinyur di Pulau Bangka dan Belitung.",
-      "Kami mengawal proyek strategis daerah seperti pembangunan Pelabuhan Pangkal Balam, sistem penyediaan air baku, serta modernisasi industri timah.",
+    title: "Sejarah PII Cabang Pangkalpinang",
+    lead:
+      "Perjalanan cabang Pangkalpinang merefleksikan dinamika pembangunan Bangka Belitung yang bertumpu pada karya insinyur lokal.",
+    paragraphs: [
+      "Cikal bakal PII Cabang Pangkalpinang lahir pada medio 1970-an melalui komunitas insinyur pertambangan timah yang berjejaring di Kota Pangkalpinang. Forum ini kemudian diresmikan sebagai cabang pada 1974 untuk memastikan praktik keinsinyuran di kepulauan berjalan etis dan profesional.",
+      "Memasuki dekade 2000-an, cabang memperluas mandat ke sektor infrastruktur perkotaan, air bersih, dan ketahanan pesisir. Program rekognisi pembelajaran lampau, pendampingan sertifikasi, serta advokasi proyek publik menjadi fondasi pelayanan anggota.",
+      "Restrukturisasi tahun 2024 menghadirkan kepengurusan baru dengan fokus pada hilirisasi timah berkelanjutan, smart port Pangkal Balam, dan penyiapan talenta teknik muda di era transisi energi.",
+    ],
+    timeline: [
+      {
+        period: "1974",
+        title: "Peresmian Cabang",
+        description:
+          "Komunitas insinyur Pangkalpinang dikukuhkan sebagai cabang resmi PII untuk mengawal proyek vital kepulauan dan memastikan penerapan kode etik.",
+      },
+      {
+        period: "1995",
+        title: "Ekspansi Program Keanggotaan",
+        description:
+          "Program peningkatan kompetensi dan sidang pendaftaran anggota baru mulai rutin digelar bersama perguruan tinggi dan BUMN tambang.",
+      },
+      {
+        period: "2010",
+        title: "Modernisasi Infrastruktur Kota",
+        description:
+          "Cabang memimpin kajian teknis sistem drainase kota, pelabuhan Pangkal Balam, serta penyediaan air baku lintas pulau.",
+      },
+      {
+        period: "2024",
+        title: "Restrukturisasi & Agenda Hijau",
+        description:
+          "Struktur organisasi diperbarui, roadmap hilirisasi timah rendah emisi disusun, dan laboratorium inovasi smart port diluncurkan.",
+      },
     ],
   },
   vision: {
@@ -163,29 +192,27 @@ export const aboutContent = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "Beranda", href: "#beranda" },
-  { label: "Dari Meja Ketum PII", href: "#dari-ketum" },
+  { label: "Beranda", href: "/" },
   {
-    label: "Tentang PII",
-    href: "#tentang",
+    label: "Tentang",
+    href: "/tentang/sejarah",
     children: [
-      { label: "Sejarah", href: "#tentang-sejarah" },
-      { label: "Visi Misi", href: "#tentang-visi" },
-      { label: "Struktur Pengurus Pangkalpinang", href: "#tentang-pengurus" },
+      { label: "Sejarah PII Pangkalpinang", href: "/tentang/sejarah" },
+      { label: "Visi & Misi", href: "/tentang/visi-misi" },
+      { label: "Struktur Pengurus", href: "/tentang/struktur" },
     ],
   },
   {
     label: "Kabar",
-    href: "#kabar",
+    href: "/#kabar",
     children: [
-      { label: "Berita", href: "#berita" },
-      { label: "Dari Meja Ketum", href: "#dari-ketum" },
-      { label: "Dari Insinyur", href: "#dari-insinyur" },
+      { label: "Berita", href: "/#berita" },
+      { label: "Sorotan Insinyur", href: "/#dari-insinyur" },
     ],
   },
-  { label: "Agenda", href: "#agenda" },
-  { label: "Layanan", href: "#layanan" },
-  { label: "Dokumen", href: "#dokumen" },
+  { label: "Agenda", href: "/#agenda" },
+  { label: "Layanan", href: "/#layanan" },
+  { label: "Dokumen", href: "/#dokumen" },
 ];
 
 export const heroSlides: HeroSlide[] = [
@@ -199,7 +226,7 @@ export const heroSlides: HeroSlide[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1400&q=80",
-    link: "#berita",
+    link: "/#berita",
     tag: "Infrastruktur Kota",
   },
   {
@@ -211,7 +238,7 @@ export const heroSlides: HeroSlide[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
-    link: "#layanan",
+    link: "/#layanan",
     tag: "Pengembangan Kompetensi",
   },
   {
@@ -223,7 +250,7 @@ export const heroSlides: HeroSlide[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80",
-    link: "#kabar",
+    link: "/#kabar",
     tag: "Industri Strategis",
   },
   {
@@ -235,7 +262,7 @@ export const heroSlides: HeroSlide[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1501426026826-31c667bdf23d?auto=format&fit=crop&w=1400&q=80",
-    link: "#agenda",
+    link: "/#agenda",
     tag: "Pelabuhan Pintar",
   },
 ];
@@ -287,7 +314,7 @@ export const services: ServiceItem[] = [
       "Pendampingan penyusunan dokumen pembelaan",
     ],
     ctaLabel: "Hubungi Sekretariat",
-    href: "https://wa.me/6281277755511",
+    href: "https://wa.me/6281806701775",
   },
 ];
 
@@ -339,45 +366,6 @@ export const news: ArticleItem[] = [
     views: 143,
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
-    link: "#",
-  },
-];
-
-export const chairInsights: ArticleItem[] = [
-  {
-    id: "chair-01",
-    title:
-      "Memastikan Hilirisasi Timah Berjalan Hijau Melalui Standarisasi Desain",
-    excerpt:
-      "Ketua Cabang menegaskan pentingnya blueprint rekayasa proses yang memadukan efisiensi energi dan pengendalian emisi.",
-    date: "Minggu, 3 Agustus 2025",
-    category: "Dari Meja Ketum",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
-    link: "#",
-  },
-  {
-    id: "chair-02",
-    title:
-      "Strategi PII Pangkalpinang Menyiapkan Talenta Keinsinyuran Digital",
-    excerpt:
-      "Program fellowship baru menggandeng startup maritim untuk eksplorasi teknologi digital twin.",
-    date: "Selasa, 15 Juli 2025",
-    category: "Dari Meja Ketum",
-    image:
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80",
-    link: "#",
-  },
-  {
-    id: "chair-03",
-    title:
-      "Dari Pangkalpinang untuk Nusantara: Menguatkan Advokasi Teknis di Daerah",
-    excerpt:
-      "Inisiatif advokasi kolektif memastikan suara insinyur daerah hadir dalam regulasi nasional.",
-    date: "Minggu, 13 Juli 2025",
-    category: "Dari Meja Ketum",
-    image:
-      "https://images.unsplash.com/photo-1500534319212-59e94d4c529d?auto=format&fit=crop&w=800&q=80",
     link: "#",
   },
 ];
@@ -472,66 +460,114 @@ export const membershipBenefits: BenefitSlide[] = [
 export const agenda: AgendaItem[] = [
   {
     id: "agenda-01",
-    title: "Workshop Hybrid: Pengisian FAIP SIMPoNI PII Pangkalpinang",
-    date: "Jumat, 24 Oktober 2025",
-    category: "Workshop",
-    mode: "Hybrid",
-    location: "Co-Lab PII Pangkalpinang & Zoom",
+    title: "Pengukuhan Pengurus PII Pangkalpinang 2024–2027",
+    date: "Sabtu, 19 Oktober 2024",
+    category: "Seremonial",
+    mode: "Offline",
+    location: "Aula Graha Rekayasa Pangkalpinang",
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
-    link: "#",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
+    link: "https://www.instagram.com/pii_pangkalpinang/",
   },
   {
     id: "agenda-02",
-    title: "Pelatihan Perancangan Sistem Tata Udara Gedung Tropis",
-    date: "Senin, 10 November 2025",
-    category: "Pelatihan",
-    mode: "Offline",
-    location: "Universitas Bangka Belitung",
+    title: "Klinik Penyusunan RPL Program Profesi Insinyur",
+    date: "Senin, 28 Oktober 2024",
+    category: "Workshop",
+    mode: "Hybrid",
+    location: "Studio PII Pangkalpinang & Zoom",
     image:
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80",
-    link: "#",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80",
+    link: "https://www.instagram.com/pii_pangkalpinang/",
   },
   {
     id: "agenda-03",
-    title: "Workshop Nasional BKTN-PII: Reindustrialisasi Kepulauan",
-    date: "Minggu, 12 Oktober 2025",
-    category: "Workshop",
-    mode: "Online",
-    location: "Studio PII Pangkalpinang",
+    title: "Roadshow Hilirisasi Timah Berkelanjutan",
+    date: "Jumat, 8 November 2024",
+    category: "Diskusi",
+    mode: "Offline",
+    location: "Hotel Soll Marina Pangkalpinang",
     image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80",
-    link: "#",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
+    link: "https://www.instagram.com/pii_pangkalpinang/",
   },
 ];
 
 export const partners: PartnerItem[] = [
-  { name: "PT Timah Tbk", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=PT+Timah", href: "https://www.pttimah.co.id" },
-  { name: "Pelindo Regional 2", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Pelindo", href: "https://www.pelindo.co.id" },
-  { name: "Universitas Bangka Belitung", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=UBB", href: "https://ubb.ac.id" },
-  { name: "Politeknik Manufaktur Babel", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Polman+Babel", href: "https://polman-babel.ac.id" },
-  { name: "PT Angkasa Pura II Depati Amir", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Angkasa+Pura+II", href: "https://angkasapura2.co.id" },
-  { name: "PT PLN UID Babel", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=PLN+UID+Babel", href: "https://pln.co.id" },
-  { name: "Bank Sumsel Babel", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Bank+Sumsel+Babel", href: "https://www.banksumselbabel.com" },
-  { name: "Babel Digital Port", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Digital+Port", href: "#" },
-  { name: "PT Pupuk Sriwijaya Wilayah Babel", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Pusri+Babel", href: "https://www.pusri.co.id" },
-  { name: "Green Corridor Group", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Green+Corridor", href: "#" },
-  { name: "Inkubator Teknologi Babel", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=Inkubator", href: "#" },
-  { name: "KADIN Pangkalpinang", logo: "https://dummyimage.com/240x120/f4f6fb/032b60&text=KADIN+PKP", href: "#" },
+  {
+    name: "PT Timah Tbk",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/f4c32222-1e54-4114-8c50-55f5a550240c.png",
+    href: "https://www.pttimah.co.id",
+  },
+  {
+    name: "Pemerintah Kota Pangkalpinang",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/db788140-3ce0-47b3-82cc-90847659ca64.jpeg",
+    href: "https://pangkalpinangkota.go.id",
+  },
+  {
+    name: "Universitas Bangka Belitung",
+    logo: "/partners/universitas-bangka-belitung.jpg",
+    href: "https://ubb.ac.id",
+  },
+  {
+    name: "Bank Sumsel Babel",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/06beb302-a561-4c7f-a90d-fecfe18c2712.png",
+    href: "https://www.banksumselbabel.com",
+  },
+  {
+    name: "PLN UID Babel",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/ffb77171-5966-4038-bf1d-228f424d09b0.png",
+    href: "https://pln.co.id",
+  },
+  {
+    name: "Pelindo",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/59c7fce1-3737-4a72-8977-ac95ffe12623.png",
+    href: "https://www.pelindo.co.id/",
+  },
+  {
+    name: "Green Corridor Group",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/6ba4aa2d-a845-4463-a089-f8432129990b.jpg",
+    href: "https://www.pii.or.id/green%20corridor%20group",
+  },
+  {
+    name: "Nginovasi",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/25fedfe8-8ec3-4084-847c-ce586394b4d7.png",
+    href: "https://nginovasi.com/",
+  },
+  {
+    name: "PT Jaya Konstruksi",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/c87a689e-831f-40a9-9ac3-9b5ff89e0dbe.png",
+    href: "https://www.jayakonstruksi.com/index.php",
+  },
+  {
+    name: "Cirebon Power",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/74cb0dbd-d80a-4909-b0b2-79a10c31c2ee.png",
+    href: "https://www.cirebonpower.co.id/id/",
+  },
+  {
+    name: "PT DQC",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/ffb77171-5966-4038-bf1d-228f424d09b0.png",
+    href: "https://www.ptdqc.com/",
+  },
+  {
+    name: "Polman Babel",
+    logo: "/partners/polman-babel.png",
+    href: "https://polman-babel.ac.id",
+  },
 ];
 
 export const footerContent = {
   addressLabel: "Graha Rekayasa Pangkalpinang",
   address:
     "Jl. Jenderal Ahmad Yani No. 88, Kel. Gajah Mada, Kec. Taman Sari, Pangkalpinang 33121",
-  phone: "+62 812 7775 5111",
-  email: "sekretariat@piipangkalpinang.or.id",
+  phone: "+62 818 0670 1775",
+  email: "piipkp@gmail.com",
   hashtags: ["#InsinyurKompeten", "#BangsaUnggul", "#PIIPangkalpinang"],
   socials: [
     { name: "Facebook", href: "https://www.facebook.com/piipangkalpinang" },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/accounts/login/?next=%2Fpii_pangkalpinang%2F&source=omni_redirect",
+      href: "https://www.instagram.com/pii_pangkalpinang/",
     },
     { name: "X", href: "https://x.com/pii_pangkalpinang" },
     { name: "LinkedIn", href: "https://www.linkedin.com/company/pii-pangkalpinang" },
@@ -564,3 +600,12 @@ export const documents = [
     href: "#",
   },
 ];
+
+
+
+
+
+
+
+
+

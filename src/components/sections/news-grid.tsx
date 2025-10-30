@@ -4,15 +4,11 @@ import { news } from "@/data/site-content";
 
 export function NewsGrid() {
   return (
-    <section
-      id="berita"
-      className="section-spacing bg-brand-fog"
-      aria-labelledby="berita-heading"
-    >
-      <div className="container">
-        <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <section id="berita" aria-labelledby="berita-heading">
+      <div className="container space-y-10">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-blue/80">
               Berita Terbaru
             </p>
             <h2
@@ -24,15 +20,18 @@ export function NewsGrid() {
           </div>
           <Link
             href="#"
-            className="text-sm font-semibold text-brand-blue transition hover:text-brand-navy"
+            className="text-sm font-semibold text-brand-blue transition hover:text-brand-midnight"
           >
-            Berita Lainnya →
+            Berita Lainnya ?
           </Link>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {news.map((item) => (
-            <article key={item.id} className="card overflow-hidden">
+            <article
+              key={item.id}
+              className="overflow-hidden rounded-[28px] border border-brand-fog bg-white shadow-card transition hover:-translate-y-1"
+            >
               <div className="relative h-56">
                 <Image
                   src={item.image}
@@ -42,7 +41,7 @@ export function NewsGrid() {
                 />
               </div>
               <div className="flex flex-col gap-4 p-6">
-                <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-slate/80">
+                <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand-slate/80">
                   <span>{item.category}</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
                   <span>{item.date}</span>
@@ -59,9 +58,9 @@ export function NewsGrid() {
                 <p className="text-sm text-brand-slate">{item.excerpt}</p>
                 <Link
                   href={item.link}
-                  className="mt-auto text-sm font-semibold text-brand-blue transition hover:text-brand-navy"
+                  className="mt-auto text-sm font-semibold text-brand-blue transition hover:text-brand-midnight"
                 >
-                  Baca Selengkapnya →
+                  Baca Selengkapnya ?
                 </Link>
               </div>
             </article>

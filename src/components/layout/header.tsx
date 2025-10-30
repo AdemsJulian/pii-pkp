@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -44,24 +44,29 @@ export function Header() {
     >
       <div
         className={cn(
-          "mx-auto flex w-full items-center justify-between border-b border-white/20 bg-white/90 px-4 py-4 backdrop-blur-lg transition-all duration-300 md:px-8",
+          "mx-auto flex w-full items-center justify-between border-b border-brand-fog/80 bg-white/95 px-4 py-4 backdrop-blur-lg transition-all duration-300 md:px-8",
           isScrolled ? "py-3" : "py-4"
         )}
       >
         <Link
-          href="#beranda"
+          href="/"
           className="flex items-center gap-3"
           aria-label="Beranda PII Pangkalpinang"
         >
           <Image
             src="/logo-pii-black.png"
             alt="Logo Persatuan Insinyur Indonesia"
-            width={150}
-            height={40}
+            width={52}
+            height={52}
             priority
           />
-          <div className="hidden text-xs font-semibold uppercase tracking-[0.2em] text-brand-navy sm:block">
-            Cabang Pangkalpinang
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="text-sm font-semibold text-brand-midnight">
+              Persatuan Insinyur Indonesia
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-blue/80">
+              Cabang Pangkalpinang
+            </span>
           </div>
         </Link>
 
@@ -79,11 +84,11 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-sm font-medium text-brand-slate transition-colors hover:text-brand-navy"
+                  className="flex items-center gap-1 text-sm font-semibold text-brand-midnight/70 transition-colors hover:text-brand-midnight"
                 >
                   {item.label}
                   {hasChildren && (
-                    <ChevronDown className="h-4 w-4 text-brand-slate/70" />
+                    <ChevronDown className="h-4 w-4 text-brand-midnight/40" />
                   )}
                 </Link>
                 {hasChildren && (
@@ -100,7 +105,7 @@ export function Header() {
                         <li key={child.label}>
                           <Link
                             href={child.href}
-                            className="block whitespace-nowrap rounded-xl px-4 py-2 text-brand-slate transition hover:bg-brand-fog hover:text-brand-navy"
+                            className="block whitespace-nowrap rounded-xl px-4 py-2 text-brand-midnight/70 transition hover:bg-brand-fog hover:text-brand-midnight"
                           >
                             {child.label}
                           </Link>
@@ -268,3 +273,6 @@ export function Header() {
     </header>
   );
 }
+
+
+

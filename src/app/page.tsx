@@ -8,7 +8,7 @@ import { BenefitsCarousel } from "@/components/sections/benefits-carousel";
 import { AgendaSlider } from "@/components/sections/agenda-slider";
 import { PartnersGrid } from "@/components/sections/partners-grid";
 import { DocumentsSection } from "@/components/sections/documents";
-import { chairInsights, engineerInsights } from "@/data/site-content";
+import { engineerInsights } from "@/data/site-content";
 
 export default function HomePage() {
   return (
@@ -17,22 +17,14 @@ export default function HomePage() {
       <AboutSection />
       <ServicesSection />
       <BannerHighlight />
-      <div id="kabar">
+      <div id="kabar" className="space-y-16 bg-brand-fog py-20">
         <NewsGrid />
         <InsightCarousel
-          id="dari-ketum"
-          eyebrow="Dari Meja Ketum PII"
-          title="Arah kebijakan dan pesan strategis dari Ketua PII Cabang Pangkalpinang"
-          items={chairInsights}
-          ctaLabel="Artikel Lainnya"
-          ctaHref="#"
-        />
-        <InsightCarousel
           id="dari-insinyur"
-          eyebrow="Dari Insinyur"
-          title="Pandangan insinyur Pangkalpinang terhadap isu strategis daerah"
+          eyebrow="Sorotan Insinyur"
+          title="Kisah dan pembelajaran dari insinyur Pangkalpinang"
           items={engineerInsights}
-          ctaLabel="Artikel Lainnya"
+          ctaLabel="Baca Artikel Lainnya"
           ctaHref="#"
         />
       </div>

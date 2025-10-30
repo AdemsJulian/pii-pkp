@@ -43,70 +43,74 @@ export function HeroSlider() {
   return (
     <section
       id="beranda"
-      className="relative min-h-[720px] overflow-hidden bg-brand-midnight text-white"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-brand-fog/60 to-white"
       aria-label="Sorotan utama"
     >
-      <div ref={sliderRef} className="keen-slider h-full">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(57,160,245,0.18),transparent_55%)]" />
+      <div ref={sliderRef} className="keen-slider">
         {heroSlides.map((slide) => (
           <article
             key={slide.id}
-            className="keen-slider__slide relative h-full"
+            className="keen-slider__slide"
             aria-roledescription="slide"
           >
-            <div className="absolute inset-0">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-midnight/90 via-brand-midnight/60 to-brand-midnight/40" />
-            </div>
-
-            <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 py-24 sm:px-8 md:py-32">
-              <span className="inline-flex w-fit items-center rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur">
-                {slide.tag}
-              </span>
-              <h1 className="mt-6 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-5xl">
-                {slide.title}
-              </h1>
-              <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-white/80 sm:text-lg">
-                {slide.summary.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+            <div className="container grid gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="space-y-6">
+                <span className="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">
+                  {slide.tag}
+                </span>
+                <h1 className="text-3xl font-semibold leading-tight text-brand-midnight sm:text-5xl">
+                  {slide.title}
+                </h1>
+                <div className="space-y-4 text-base leading-relaxed text-brand-slate sm:text-lg">
+                  {slide.summary.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <Link
+                    href={slide.link}
+                    className="rounded-full bg-brand-midnight px-6 py-3 text-sm font-semibold text-white shadow-floating transition hover:-translate-y-1 hover:bg-brand-blue"
+                  >
+                    Baca Selengkapnya
+                  </Link>
+                  <Link
+                    href="#agenda"
+                    className="inline-flex items-center text-sm font-semibold text-brand-midnight transition hover:text-brand-blue"
+                  >
+                    Lihat Agenda Terdekat →
+                  </Link>
+                </div>
               </div>
-              <div className="mt-10 flex items-center gap-4">
-                <Link
-                  href={slide.link}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-midnight transition hover:-translate-y-0.5 hover:bg-brand-sky"
-                >
-                  Baca Selengkapnya
-                </Link>
-                <Link
-                  href="#agenda"
-                  className="text-sm font-semibold text-white/80 transition hover:text-white"
-                >
-                  Lihat Agenda PII Pangkalpinang →
-                </Link>
+              <div className="relative">
+                <div className="absolute inset-0 -z-10 rounded-[36px] bg-gradient-to-br from-brand-blue/15 via-brand-sky/10 to-transparent blur-2xl" />
+                <div className="overflow-hidden rounded-[32px] border border-white/70 shadow-2xl">
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    width={920}
+                    height={620}
+                    className="h-full w-full object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </article>
         ))}
       </div>
-
-      <div className="pointer-events-none absolute bottom-12 left-1/2 flex -translate-x-1/2 gap-3">
+      <div className="pointer-events-none absolute bottom-10 left-1/2 flex -translate-x-1/2 gap-3">
         {heroSlides.map((slide, idx) => (
           <button
             key={slide.id}
             type="button"
-            className="pointer-events-auto h-2 w-10 rounded-full transition-all"
+            className="pointer-events-auto h-2 w-8 rounded-full bg-brand-midnight/25 transition-all hover:bg-brand-midnight/40"
             aria-label={`Slide ${idx + 1}`}
             onClick={() => instanceRef.current?.moveToIdx(idx)}
             style={{
               backgroundColor:
-                currentSlide === idx ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
-              width: currentSlide === idx ? "48px" : "24px",
+                currentSlide === idx ? "rgba(3,43,96,0.85)" : "rgba(3,43,96,0.25)",
+              width: currentSlide === idx ? "42px" : "26px",
             }}
           />
         ))}

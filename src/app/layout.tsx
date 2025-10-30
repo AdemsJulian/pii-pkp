@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
@@ -13,8 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://piipangkalpinang.or.id"),
   title: {
-    default: "Persatuan Insinyur Indonesia Cabang Pangkalpinang",
-    template: "%s | PII Pangkalpinang",
+    default: "PII PKP",
+    template: "%s | PII PKP",
   },
   description:
     "Situs resmi PII Cabang Pangkalpinang: berita, agenda, layanan keanggotaan, sertifikasi, dan advokasi insinyur di Bangka Belitung.",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://piipangkalpinang.or.id",
-    title: "Persatuan Insinyur Indonesia Cabang Pangkalpinang",
+    title: "PII PKP",
     description:
-      "Portal resmi PII Pangkalpinang dengan kabar, agenda, layanan, dan jejaring insinyur Bangka Belitung.",
+      "Portal resmi PII Pangkalpinang dengan berita, agenda, layanan, dan jejaring insinyur Bangka Belitung.",
     images: [
       {
         url: "/og-image.png",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@pii_pangkalpinang",
-    title: "Persatuan Insinyur Indonesia Cabang Pangkalpinang",
+    title: "PII PKP",
     description:
-      "Portal resmi PII Pangkalpinang dengan kabar, agenda, layanan, dan jejaring insinyur Bangka Belitung.",
+      "Portal resmi PII Pangkalpinang dengan berita, agenda, layanan, dan jejaring insinyur Bangka Belitung.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -72,3 +72,4 @@ export default function RootLayout({
     </html>
   );
 }
+
