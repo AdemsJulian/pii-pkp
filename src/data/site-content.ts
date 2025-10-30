@@ -495,14 +495,14 @@ export const agenda: AgendaItem[] = [
 
 export const partners: PartnerItem[] = [
   {
-    name: "PT Timah Tbk",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/f4c32222-1e54-4114-8c50-55f5a550240c.png",
-    href: "https://www.pttimah.co.id",
+    name: "PT Pindad",
+    logo: "/partners/pindad.png",
+    href: "https://www.pindad.com",
   },
   {
-    name: "Pemerintah Kota Pangkalpinang",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/db788140-3ce0-47b3-82cc-90847659ca64.jpeg",
-    href: "https://pangkalpinangkota.go.id",
+    name: "Karya Teknologi Abadi",
+    logo: "/partners/kta.png",
+    href: "https://karyateknologiabadi.com",
   },
   {
     name: "Universitas Bangka Belitung",
@@ -510,19 +510,29 @@ export const partners: PartnerItem[] = [
     href: "https://ubb.ac.id",
   },
   {
-    name: "Bank Sumsel Babel",
+    name: "Tripatra",
     logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/06beb302-a561-4c7f-a90d-fecfe18c2712.png",
-    href: "https://www.banksumselbabel.com",
+    href: "https://www.tripatra.com/id",
   },
   {
-    name: "PLN UID Babel",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/ffb77171-5966-4038-bf1d-228f424d09b0.png",
-    href: "https://pln.co.id",
+    name: "PT Timah Tbk",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/f4c32222-1e54-4114-8c50-55f5a550240c.png",
+    href: "https://www.pttimah.co.id",
+  },
+  {
+    name: "PT Jaya Konstruksi",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/c87a689e-831f-40a9-9ac3-9b5ff89e0dbe.png",
+    href: "https://www.jayakonstruksi.com/index.php",
   },
   {
     name: "Pelindo",
     logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/59c7fce1-3737-4a72-8977-ac95ffe12623.png",
     href: "https://www.pelindo.co.id/",
+  },
+  {
+    name: "Cirebon Power",
+    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/74cb0dbd-d80a-4909-b0b2-79a10c31c2ee.png",
+    href: "https://www.cirebonpower.co.id/id/",
   },
   {
     name: "Green Corridor Group",
@@ -533,16 +543,6 @@ export const partners: PartnerItem[] = [
     name: "Nginovasi",
     logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/25fedfe8-8ec3-4084-847c-ce586394b4d7.png",
     href: "https://nginovasi.com/",
-  },
-  {
-    name: "PT Jaya Konstruksi",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/c87a689e-831f-40a9-9ac3-9b5ff89e0dbe.png",
-    href: "https://www.jayakonstruksi.com/index.php",
-  },
-  {
-    name: "Cirebon Power",
-    logo: "https://is3.cloudhost.id/orbit-pii/partner/cover/74cb0dbd-d80a-4909-b0b2-79a10c31c2ee.png",
-    href: "https://www.cirebonpower.co.id/id/",
   },
   {
     name: "PT DQC",
@@ -600,6 +600,7 @@ export const documents = [
     href: "#",
   },
 ];
+
 
 
 
