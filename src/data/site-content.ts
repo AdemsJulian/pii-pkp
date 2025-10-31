@@ -297,24 +297,24 @@ export const services: ServiceItem[] = [
     description:
       "Penilaian Insinyur Profesional dan penerbitan SKK/SKIP berada di bawah Dewan Insinyur PII pusat.",
     highlights: [
-      "Pengajuan portofolio melalui sertifikasi.pii.or.id",
+      "Panduan lengkap tersedia di pii.or.id/layanan/sertifikasi",
       "Cabang menyediakan klinik review sebelum sidang pusat",
       "Informasi jadwal asesmen nasional diperbarui oleh PII pusat",
     ],
     ctaLabel: "Portal Sertifikasi PII",
-    href: "https://sertifikasi.pii.or.id/",
+    href: "https://www.pii.or.id/layanan/sertifikasi",
   },
   {
     title: "Advokasi & Bantuan Hukum",
     description:
       "Penanganan sengketa keteknikan skala nasional dikordinasikan oleh tim advokasi PII pusat.",
     highlights: [
-      "Pengajuan kasus melalui advokasi@pii.or.id",
+      "Informasi layanan lengkap tersedia di pii.or.id/layanan/advokasi",
       "Cabang membantu merangkum kronologi lokal untuk tim pusat",
       "Hotline pusat siaga 24/7 bagi anggota aktif",
     ],
     ctaLabel: "Hubungi Tim Advokasi Pusat",
-    href: "mailto:advokasi@pii.or.id",
+    href: "https://www.pii.or.id/layanan/advokasi",
   },
 ];
 
