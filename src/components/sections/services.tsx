@@ -4,7 +4,7 @@ import { services } from "@/data/site-content";
 export function ServicesSection() {
   const localSupport = [
     {
-      title: "Klinik Administrasi Cabang",
+      title: "Kantor Administrasi Cabang",
       description:
         "Sekretariat cabang memeriksa kelengkapan berkas anggota sebelum dikirim ke portal nasional.",
       points: [
