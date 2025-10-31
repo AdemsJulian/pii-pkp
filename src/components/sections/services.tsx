@@ -133,7 +133,7 @@ export function ServicesSection() {
                         <ul className="space-y-1 text-xs text-white/70">
                           {service.highlights.map((highlight) => (
                             <li key={highlight} className="flex gap-2">
-                              <span>•</span>
+                              <span>-</span>
                               <span>{highlight}</span>
                             </li>
                           ))}
