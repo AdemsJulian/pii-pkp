@@ -12,7 +12,7 @@ export function ServicesSection() {
         "Pendampingan upload dokumen di updmember & sertifikasi PII",
         "Sesi tatap muka/daring setiap Selasa dan Kamis",
       ],
-      ctaLabel: "Atur Jadwal Klinik",
+      ctaLabel: "Atur Jadwal",
       ctaHref: "https://wa.me/6281806701775",
     },
     {
