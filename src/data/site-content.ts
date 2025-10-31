@@ -285,12 +285,12 @@ export const services: ServiceItem[] = [
     description:
       "Penjadwalan kelas, asesmen, dan yudisium PPI dikelola terpusat oleh PII dan perguruan tinggi mitra nasional.",
     highlights: [
-      "Informasi batch nasional tersedia di ppi.pii.or.id",
+      "Informasi batch nasional tersedia di pii.or.id/layanan/program-profesi-insinyur",
       "Cabang memfasilitasi surat rekomendasi dan asesmen awal daerah",
       "Kontak resmi: ppi@pii.or.id",
     ],
     ctaLabel: "Kunjungi Portal PPI",
-    href: "https://ppi.pii.or.id/",
+    href: "https://www.pii.or.id/layanan/program-profesi-insinyur",
   },
   {
     title: "Sertifikasi & SKK/SKIP",
