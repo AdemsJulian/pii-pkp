@@ -50,9 +50,10 @@ export function Header() {
           <Image
             src="/logo-pii-black.png"
             alt="Logo Persatuan Insinyur Indonesia"
-            width={52}
-            height={52}
+            width={376}
+            height={536}
             priority
+            className="h-14 w-auto"
           />
           <div className="hidden sm:flex flex-col leading-tight">
             <span className="text-sm font-semibold text-brand-midnight">
@@ -151,8 +152,9 @@ export function Header() {
           <Image
             src="/logo-pii-black.png"
             alt="Logo PII Pangkalpinang"
-            width={140}
-            height={36}
+            width={376}
+            height={536}
+            className="h-16 w-auto"
           />
           <button
             type="button"

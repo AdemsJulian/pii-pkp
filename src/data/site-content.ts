@@ -269,52 +269,52 @@ export const heroSlides: HeroSlide[] = [
 
 export const services: ServiceItem[] = [
   {
-    title: "Keanggotaan",
+    title: "Keanggotaan PII Nasional",
     description:
-      "Jaringan 700+ insinyur Bangka Belitung dengan klinik karier, forum proyek strategis, dan akses praxis digital PII.",
+      "Registrasi dan penerbitan kartu anggota dilakukan oleh Sekretariat Jenderal PII pusat melalui portal resmi.",
     highlights: [
-      "Mentoring IPM & IPU wilayah Sumatra",
-      "Kartu anggota digital + akses coworking PII Pangkalpinang",
-      "Prioritas undangan proyek Pemkot & BUMN tambang",
+      "Portal pendaftaran: updmember.pii.or.id",
+      "Cabang membantu pratinjau dokumen sebelum diajukan ke pusat",
+      "Kartu digital dan fisik diterbitkan langsung oleh PII pusat",
     ],
-    ctaLabel: "Daftar Anggota",
+    ctaLabel: "Buka Portal Keanggotaan",
     href: "https://updmember.pii.or.id/auth/register",
   },
   {
-    title: "Program Profesi Insinyur",
+    title: "Program Profesi Insinyur (PPI)",
     description:
-      "Program terakreditasi yang menyesuaikan kurikulum dengan industri timah, energi pesisir, dan smart port.",
+      "Penjadwalan kelas, asesmen, dan yudisium PPI dikelola terpusat oleh PII dan perguruan tinggi mitra nasional.",
     highlights: [
-      "Skema RPL untuk insinyur berpengalaman",
-      "Kolaborasi dengan Universitas Bangka Belitung & Polman Babel",
-      "Coaching clinic laporan keinsinyuran mingguan",
+      "Informasi batch nasional tersedia di ppi.pii.or.id",
+      "Cabang memfasilitasi surat rekomendasi dan asesmen awal daerah",
+      "Kontak resmi: ppi@pii.or.id",
     ],
-    ctaLabel: "Jadwalkan Konsultasi",
-    href: "mailto:ppi@piipangkalpinang.or.id",
+    ctaLabel: "Kunjungi Portal PPI",
+    href: "https://ppi.pii.or.id/",
   },
   {
-    title: "Sertifikasi",
+    title: "Sertifikasi & SKK/SKIP",
     description:
-      "Pendampingan lengkap menuju SKK, SKIP, hingga ASEAN Chartered Professional Engineer dengan penekanan proyek maritim.",
+      "Penilaian Insinyur Profesional dan penerbitan SKK/SKIP berada di bawah Dewan Insinyur PII pusat.",
     highlights: [
-      "Review portofolio oleh asesor IPU",
-      "Simulasi panel wawancara daring",
-      "Paket percepatan untuk proyek pemerintah",
+      "Pengajuan portofolio melalui sertifikasi.pii.or.id",
+      "Cabang menyediakan klinik review sebelum sidang pusat",
+      "Informasi jadwal asesmen nasional diperbarui oleh PII pusat",
     ],
-    ctaLabel: "Mulai Penilaian",
-    href: "https://piipangkalpinang.or.id/sertifikasi",
+    ctaLabel: "Portal Sertifikasi PII",
+    href: "https://sertifikasi.pii.or.id/",
   },
   {
-    title: "Advokasi",
+    title: "Advokasi & Bantuan Hukum",
     description:
-      "Tim hukum dan teknis siap mendampingi anggota dalam isu sengketa konstruksi, keselamatan kerja, atau kontrak industri.",
+      "Penanganan sengketa keteknikan skala nasional dikordinasikan oleh tim advokasi PII pusat.",
     highlights: [
-      "Hotline insiden 24/7 via WhatsApp",
-      "Panel ahli konstruksi dan industri proses",
-      "Pendampingan penyusunan dokumen pembelaan",
+      "Pengajuan kasus melalui advokasi@pii.or.id",
+      "Cabang membantu merangkum kronologi lokal untuk tim pusat",
+      "Hotline pusat siaga 24/7 bagi anggota aktif",
     ],
-    ctaLabel: "Hubungi Sekretariat",
-    href: "https://wa.me/6281806701775",
+    ctaLabel: "Hubungi Tim Advokasi Pusat",
+    href: "mailto:advokasi@pii.or.id",
   },
 ];
 
