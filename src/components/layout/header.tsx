@@ -2,39 +2,16 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navItems } from "@/data/site-content";
 import { cn } from "@/lib/utils";
-
-const languages = [
-  { code: "ID", label: "Indonesia" },
-  { code: "EN", label: "English" },
-];
-
-const LANGUAGE_STORAGE_KEY = "pii:preferred-language";
-const ORIGINAL_URL_STORAGE_KEY = "pii:last-original-url";
-const DEFAULT_TRANSLATABLE_BASE_URL = "https://piipkp.netlify.app";
-const TRANSLATABLE_BASE_URL = (
-  process.env.NEXT_PUBLIC_TRANSLATABLE_BASE_URL ||
-  DEFAULT_TRANSLATABLE_BASE_URL
-).replace(/\/$/, "");
-
-const isLocalHostname = (hostname: string) =>
-  hostname === "localhost" ||
-  hostname === "127.0.0.1" ||
-  hostname === "[::1]" ||
-  hostname.endsWith(".local") ||
-  /^192\.168\./.test(hostname) ||
-  /^10\./.test(hostname) ||
-  /^172\.(1[6-9]|2\d|3[0-1])\./.test(hostname);
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
-  const [selectedLanguage, setSelectedLanguage] = useState("ID");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
@@ -50,111 +27,6 @@ export function Header() {
       document.body.style.overflow = "";
     }
   }, [mobileOpen]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const currentUrl = new URL(window.location.href);
-    const hostname = currentUrl.hostname;
-    const isTranslatedHost =
-      hostname.includes("translate.goog") ||
-      hostname.includes("translate.googleusercontent.com");
-
-    if (isTranslatedHost) {
-      setSelectedLanguage("EN");
-
-      try {
-        const originalUrl = currentUrl.searchParams.get("u");
-        const returnUrl =
-          currentUrl.searchParams.get("original") ??
-          (originalUrl ? decodeURIComponent(originalUrl) : null);
-
-        if (returnUrl) {
-          sessionStorage.setItem(ORIGINAL_URL_STORAGE_KEY, returnUrl);
-        }
-        localStorage.setItem(LANGUAGE_STORAGE_KEY, "EN");
-      } catch {
-        // no-op when storage is unavailable
-      }
-      return;
-    }
-
-    try {
-      const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-
-      if (storedLanguage === "ID") {
-        setSelectedLanguage("ID");
-      } else {
-        setSelectedLanguage("ID");
-        localStorage.setItem(LANGUAGE_STORAGE_KEY, "ID");
-      }
-    } catch {
-      // ignore storage issues while defaulting to ID
-      setSelectedLanguage("ID");
-    }
-  }, []);
-
-  const handleLanguageChange = useCallback(
-    (langCode: string) => {
-      if (langCode === selectedLanguage) {
-        return;
-      }
-
-      setSelectedLanguage(langCode);
-
-      if (typeof window === "undefined") {
-        return;
-      }
-
-      try {
-        localStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
-      } catch {
-        // ignore storage issues
-      }
-
-      if (langCode === "EN") {
-        const currentUrl = new URL(window.location.href);
-        const targetUrl = isLocalHostname(currentUrl.hostname)
-          ? `${TRANSLATABLE_BASE_URL}${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`
-          : currentUrl.href;
-
-        const translatorUrl = new URL("https://translate.google.com/translate");
-        translatorUrl.searchParams.set("sl", "id");
-        translatorUrl.searchParams.set("tl", "en");
-        translatorUrl.searchParams.set("u", targetUrl);
-        translatorUrl.searchParams.set("original", currentUrl.href);
-
-        window.location.href = translatorUrl.toString();
-        return;
-      }
-
-      let targetUrl: string | null = null;
-
-      try {
-        targetUrl = sessionStorage.getItem(ORIGINAL_URL_STORAGE_KEY);
-        if (!targetUrl) {
-          const currentUrl = new URL(window.location.href);
-          targetUrl =
-            currentUrl.searchParams.get("original") ??
-            currentUrl.searchParams.get("u");
-        }
-      } catch {
-        targetUrl = null;
-      }
-
-      if (targetUrl) {
-        try {
-          sessionStorage.removeItem(ORIGINAL_URL_STORAGE_KEY);
-        } catch {
-          // ignore removal issues
-        }
-        window.location.href = decodeURIComponent(targetUrl);
-      }
-    },
-    [selectedLanguage]
-  );
 
   return (
     <header
@@ -242,29 +114,6 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <div
-            className="flex items-center rounded-full border border-brand-slate/20 bg-white p-1 text-xs font-semibold text-brand-slate shadow-card"
-            role="radiogroup"
-            aria-label="Pengaturan bahasa"
-          >
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                type="button"
-                role="radio"
-                aria-checked={selectedLanguage === lang.code}
-                className={cn(
-                  "rounded-full px-3 py-1 transition",
-                  selectedLanguage === lang.code
-                    ? "bg-brand-blue text-white shadow-sm"
-                    : "text-brand-slate hover:text-brand-navy"
-                )}
-                onClick={() => handleLanguageChange(lang.code)}
-              >
-                {lang.code}
-              </button>
-            ))}
-          </div>
           <Link
             href="https://updmember.pii.or.id/auth/register"
             className="rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-white shadow-floating transition hover:-translate-y-0.5 hover:bg-brand-navy"
@@ -313,24 +162,6 @@ export function Header() {
           >
             <X className="h-5 w-5 text-brand-navy" />
           </button>
-        </div>
-
-        <div className="mb-6 flex items-center gap-2 rounded-full border border-brand-slate/20 bg-brand-fog p-1">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              type="button"
-              className={cn(
-                "w-full rounded-full px-3 py-1 text-sm font-semibold",
-                selectedLanguage === lang.code
-                  ? "bg-white text-brand-navy shadow"
-                  : "text-brand-slate"
-              )}
-              onClick={() => handleLanguageChange(lang.code)}
-            >
-              {lang.label}
-            </button>
-          ))}
         </div>
 
         <ul className="space-y-4 text-brand-navy">
